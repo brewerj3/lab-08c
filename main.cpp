@@ -12,6 +12,10 @@
 #include "animal.h"
 
 int main() {
-    Animal myFirstAnimal = Animal( "Felis Catus");
+    Animal myFirstAnimal = Animal("Felis Catus");
+    myFirstAnimal.setGender(MALE);
+    myFirstAnimal.setWeight(19);
+    myFirstAnimal.printInfo();
 
+    return 0;
 }
