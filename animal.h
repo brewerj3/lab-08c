@@ -46,7 +46,7 @@ public:
             weight = weightOfAnimal;
         }
     }
-    static const std::string getKingdom() {
+    static std::string getKingdom() {
         return "Animalia";
     }
     std::string getSpecies() {
@@ -81,7 +81,7 @@ public:
         else
             return false;
     }
-    bool isValidWeight( float weightToCheck ) {
+    static bool isValidWeight( float weightToCheck ) {
         if(weightToCheck <= 0 ){
             return false;
         }

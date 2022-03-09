@@ -12,10 +12,26 @@
 #include "animal.h"
 
 int main() {
-    Animal myFirstAnimal = Animal("Felis Catus");
-    myFirstAnimal.setGender(MALE);
-    myFirstAnimal.setWeight(19);
+    Animal myFirstAnimal = Animal( "Felis Catus" );
+    myFirstAnimal.setGender( MALE );
+    myFirstAnimal.setWeight( 19 );
     myFirstAnimal.printInfo();
+
+    Animal mySecondAnimal = Animal( "Felis Catus", FEMALE );
+    mySecondAnimal.printInfo();
+    mySecondAnimal.setWeight( 12 );
+    mySecondAnimal.printInfo();
+
+    Animal myThirdAnimal = Animal( "Felis Catus", UNKNOWN_GENDER );
+    myThirdAnimal.printInfo();
+    myThirdAnimal.setWeight( -2 );
+    myThirdAnimal.printInfo();
+    myThirdAnimal.setWeight( 22 );
+    myThirdAnimal.setGender( MALE );
+    myThirdAnimal.printInfo();
+
+    Animal myFourthAnimal = Animal( "Felis Catus", UNKNOWN_GENDER, 13 );
+    myFourthAnimal.printInfo();
 
     return 0;
 }
