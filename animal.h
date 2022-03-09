@@ -8,3 +8,14 @@
 /// @author Joshua Brewer <brewerj3@hawaii.edu>
 /// @date 08_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+#include <string>
+
+class Animal {
+public:
+    static const std::string kingdom; //All Animals are animals
+    std::string species;
+    enum Gender{UNKOWN_GENDER, MALE, FEMALE};
+    float weight = -1;
+};
