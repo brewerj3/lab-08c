@@ -22,24 +22,24 @@ protected:
     float weight = -1;
 
 public:
-    explicit Animal( const std::string speciesName ) {
+    explicit Animal( const std::string& speciesName ) {
         species = speciesName;
         gender = UNKNOWN_GENDER;
         weight = -1;
     }
-    Animal( const std::string speciesName, const enum Gender genderOfAnimal ) {
+    Animal( const std::string& speciesName, const enum Gender genderOfAnimal ) {
         species = speciesName;
         gender = genderOfAnimal;
         weight = -1;
     }
-    Animal( const std::string speciesName, const enum Gender genderOfAnimal, const float weightOfAnimal ) {
+    Animal( const std::string& speciesName, const enum Gender genderOfAnimal, const float weightOfAnimal ) {
         if( isValidWeight(weightOfAnimal)  ) {
             species = speciesName;
             gender = genderOfAnimal;
             weight = weightOfAnimal;
         }
     }
-    Animal( const std::string speciesName, const float weightOfAnimal ) {
+    Animal( const std::string& speciesName, const float weightOfAnimal ) {
         if( isValidWeight(weightOfAnimal) ) {
             species = speciesName;
             gender = UNKNOWN_GENDER;
@@ -61,11 +61,11 @@ public:
         }
     }
     void setWeight( float weightToSet ) {
-        if( !isValidWeight(weightToSet) ) {
-            std::cout << "Weight cannot be less than 0. Try again." << std::endl;
+        if( isValidWeight(weightToSet) ) {
+            weight = weightToSet;
             return;
         }
-        weight = weightToSet;
+        std::cout << "Weight cannot be less than 0. Try again." << std::endl;
     }
     void printInfo( ) {
         std::cout << "Animal Fields" << std::endl;
